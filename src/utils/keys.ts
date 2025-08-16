@@ -5,13 +5,13 @@ import bs58 from "bs58";
 import { Buffer } from 'buffer'; // Import Buffer for hex conversion
 
 
-export function createMnemonic() {
+export function createMnemonic() :string {
     const mnemonic = generateMnemonic(128);
     console.log(Buffer.from(mnemonic).toString()); // Works now
     return mnemonic;
 }
 
-export function mnemonicToKeypair(mnemonic, index = 0) {
+export function mnemonicToKeypair(mnemonic: string, index = 0) {
     const seed = mnemonicToSeedSync(mnemonic);
     const path = `m/44'/501'/${index}'/0'`;
     const derivedPath = derivePath(path, seed.toString('hex')).key;
