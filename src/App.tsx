@@ -2,7 +2,6 @@ import { useEffect, useState, useCallback } from "react";
 import { createMnemonic, mnemonicToKeypair } from "./utils/keys";
 import ShowContent from "./ShowContent";
 import { Trash, PlusCircle, Key, Copy } from "lucide-react";
-import { ThemeToggle } from "./ThemeToggle";
 
 type Wallet = {
   index: number;
@@ -69,7 +68,6 @@ export default function App() {
           <h1 className="text-2xl md:text-3xl font-extrabold tracking-tight ">
             Solana Wallet Manager
           </h1>
-          {/* <ThemeToggle /> */}
         </header>
 
         {/* MNEMONIC SECTION */}
